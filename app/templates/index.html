@@ -16,6 +16,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
+<!--	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">-->
+
 
 	<style type="text/css">
 		body {
@@ -85,6 +87,96 @@
 	</div>
 	<script>
 	  // your solution here
+
+	  var rotate_element = document.getElementById('rotate-box');
+	  var rot = new Hammer(rotate_element);
+	  var ro = new Hammer.Rotate();
+	  rot.add([ro]);
+	  rot.on("rotate", function(ev) {
+		  rotate_element.textContent = "rotate it";
+	  });
+
+	  var pinch_element = document.getElementById('pinch-box');
+	  var pinch = new Hammer(pinch_element);
+	  var pi = new Hammer.Pinch();
+	  pinch.add([pi]);
+	  pinch.on("pinch", function(ev) {
+		  pinch_element.textContent = "pinch it";
+	  });
+
+	  var press_element = document.getElementById('press-box');
+	  var pre = new Hammer(press_element);
+	  pre.on("press", function(ev){
+		  press_element.textContent = "pressed ";
+	  });
+
+	  var swipe_element = document.getElementById('swipe-box');
+	  var swiper = new Hammer(swipe_element);
+	  swiper.on("swipe", function(ev){
+		  swipe_element.textContent = "swiped";
+	  })
+
+	  var Pan_element = document.getElementById('pan-box');
+	  var pan = new Hammer(Pan_element);
+	  pan.on("pan", function(ev){
+		  Pan_element.textContent = "Panned";
+	  });
+
+
+
+	  var tap_element = document.getElementById('tap-box');
+	  var htap = new Hammer(tap_element);
+	  htap.on("tap", function(ev){
+		  tap_element.textContent = "tapped";
+	  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  // var myElement = document.getElementById("rotate-box");
+	  // var hammer_time = new hammer(myElement);
+	  //
+	  // var rotate = new hammer.Rotate();
+	  //
+	  // hammer_time.add(rotate);
+	  //
+	  // hammer_time.on("rotate", function (ev) {
+	  // 	myElement.textContent += ev.type + " ";
+	  // });
+	  // hammer_time.on("rotate_left rotate_")
+	  //
+	  // hammer_time.get('rotate').set({ enable: true });
+
+	  // hammer_time.on('rotate', function(ev) {
+		//   console.log(ev);
+	  // });
+
+	  // hammer_time.get('pinch').set({ enable: true });
+
+
+
+	  // $ (document).ready(() => {
+	  //
+	  // });
+
+
   </script>
 </body>
 </html>
